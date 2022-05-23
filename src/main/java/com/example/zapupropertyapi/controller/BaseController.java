@@ -12,7 +12,7 @@ public class BaseController {
 
     @GetMapping(value = "/index")
     public ResponseEntity<DenemeDto> index() {
-        DenemeDto deneme = DenemeDto.builder().welcome("welcome").build();
+        DenemeDto deneme = DenemeDto.builder().welcome("welcome2").build();
         return ResponseEntity.ok(deneme);
     }
 }
