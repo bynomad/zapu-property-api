@@ -6,7 +6,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class ServletInitializer extends SpringBootServletInitializer {
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder){
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder) {
         return applicationBuilder.sources(ZapuPropertyApiApplication.class);
     }
 }
