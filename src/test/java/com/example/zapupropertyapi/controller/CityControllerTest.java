@@ -1,7 +1,7 @@
 package com.example.zapupropertyapi.controller;
 
-import com.example.zapupropertyapi.model.Category;
-import com.example.zapupropertyapi.service.category.CategoryService;
+import com.example.zapupropertyapi.model.City;
+import com.example.zapupropertyapi.service.city.CityService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,34 +17,33 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-class CategoryControllerTest {
+class CityControllerTest {
     @InjectMocks
-    private CategoryController categoryController;
+    private CityController cityController;
 
     @Mock
-    private CategoryService categoryService;
-
-    Category category;
+    private CityService cityService;
+    City city;
 
     @BeforeEach
     public void init() {
-        category = new Category();
-        category.setId(Short.valueOf("1"));
-        category.setName("konut");
+        city = new City();
+        city.setId(Short.valueOf("1"));
+        city.setName("Ankara");
     }
 
     @Test
-    public void shouldGetAllCategories() {
-        ResponseEntity<List<Category>> response = categoryController.getAllCategories();
-        verify(categoryService).getAllCategories();
+    public void shouldGetAllCities() {
+        ResponseEntity<List<City>> response = cityController.getAllCities();
+        verify(cityService).getAllCities();
 
         assertEquals(response.getStatusCode(), HttpStatus.OK);
     }
 
     @Test
-    public void shouldCreateCategory() {
-        ResponseEntity<Category> response = categoryController.createCategory(category);
-        verify(categoryService).createCategory(category);
+    public void shouldCreateCity() {
+        ResponseEntity<City> response = cityController.createCity(city);
+        verify(cityService).createCity(city);
 
         assertEquals(response.getStatusCode(), HttpStatus.OK);
     }

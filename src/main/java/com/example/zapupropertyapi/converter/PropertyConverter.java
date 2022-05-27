@@ -57,7 +57,7 @@ public class PropertyConverter {
     public Property convertToEntity(PropertyDto propertyDto) throws Exception {
         Property property = modelMapper.map(propertyDto, Property.class);
 
-        Optional<City> city = cityService.getCityById(propertyDto.getCityId());
+        Optional<City> city = cityService.getCityById(Short.parseShort(propertyDto.getCityName()));
         if (!city.isPresent()) {
             throw new Exception("city not found");
         }

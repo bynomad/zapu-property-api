@@ -16,6 +16,8 @@ public class PropertyController {
     private final PropertyService propertyService;
     private final PropertyConverter propertyConverter;
 
+    private final int DEFAULT_ALL_PROPERTIES_PAGE_SIZE = 100;
+
     public PropertyController(PropertyService propertyService, PropertyConverter propertyConverter) {
         this.propertyService = propertyService;
         this.propertyConverter = propertyConverter;
@@ -37,7 +39,7 @@ public class PropertyController {
 
     @GetMapping(value = "properties")
     public ResponseEntity<Page<Property>> getAllProperties() {
-        Pageable paging = PageRequest.of(0, 100);
+        Pageable paging = PageRequest.of(0, DEFAULT_ALL_PROPERTIES_PAGE_SIZE);
         return ResponseEntity.ok().body(propertyService.getProperties(paging));
     }
 
