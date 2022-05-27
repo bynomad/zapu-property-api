@@ -15,4 +15,5 @@ artifacts:
     - target/*.jar
     - scripts/*.sh
     - appspec.yml
+    - docker-compose.yml
   discard-paths: yes
