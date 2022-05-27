@@ -30,7 +30,7 @@ public class CategoryController {
     // for amazon aws purpose
     @GetMapping(value = "/index")
     public ResponseEntity<String> index() {
-        String deneme = "Welcome to Zapu";
+        String deneme = "Welcome to Zapu Project";
         return ResponseEntity.ok(deneme);
     }
 }
