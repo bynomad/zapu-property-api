@@ -1,5 +1,6 @@
 package com.example.zapupropertyapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,8 +17,10 @@ public class PropertyDto implements Serializable {
     @JsonProperty("category")
     private Short categoryId;
     private String title;
-    @JsonProperty("city")
+    @JsonIgnore
     private short cityId;
+    @JsonProperty("city")
+    private String cityName;
     private BigDecimal price;
     private String currency;
 }

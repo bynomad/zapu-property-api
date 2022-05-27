@@ -31,7 +31,7 @@ public class PropertyConverter {
 
     public PropertyDto convertToDto(Property property) {
         PropertyDto propertyDto = modelMapper.map(property, PropertyDto.class);
-        propertyDto.setCityId(property.getCity().getId());
+        propertyDto.setCityName(property.getCity().getName());
         propertyDto.setCategoryId(property.getCategory().getId());
         return propertyDto;
     }
@@ -47,9 +47,7 @@ public class PropertyConverter {
                 .build();
 
         List<PropertySearchResponseDto> result = new ArrayList<>();
-        properties.getContent().forEach(property -> {
-            result.add(modelMapper.map(property, PropertySearchResponseDto.class));
-        });
+        properties.getContent().forEach(property -> result.add(modelMapper.map(property, PropertySearchResponseDto.class)));
 
         responseDto.setResult(result);
 
